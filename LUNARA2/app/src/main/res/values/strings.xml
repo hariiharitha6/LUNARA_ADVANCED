@@ -1,0 +1,213 @@
+<resources>
+    <string name="app_name">LUNARA</string>
+    <string name="tagline">Maternal Care Connect</string>
+    <string name="subtitle">Smart Pregnancy Monitoring &amp; Alerts</string>
+    <string name="get_started">Get Started →</string>
+    <string name="free_tagline">Free • Offline-capable • ASHA-verified</string>
+
+    <!-- Role Selection -->
+    <string name="welcome_lunara">Welcome to LUNARA</string>
+    <string name="choose_role">Choose your role to continue</string>
+    <string name="pregnant_woman">Pregnant Woman</string>
+    <string name="asha_worker">ASHA Worker</string>
+    <string name="continue_woman">🤰  Continue as Woman</string>
+    <string name="continue_asha">🏥  Continue as ASHA Worker</string>
+    <string name="track_pregnancy">Track your pregnancy &amp; health</string>
+    <string name="manage_care">Monitor &amp; manage patient care</string>
+
+    <!-- Login -->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="woman_login">Pregnant Woman Login</string>
+    <string name="mobile_number">📱 Mobile Number</string>
+    <string name="password">🔒 Password</string>
+    <string name="login">Login</string>
+    <string name="no_account">Don\'t have an account? Register</string>
+
+    <!-- Registration -->
+    <string name="registration">📋 Registration</string>
+    <string name="create_profile">Create your pregnancy profile</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="full_name">Full Name</string>
+    <string name="area_village">Area / Village</string>
+    <string name="weight_kg">Weight (kg)</string>
+    <string name="create_password">Create Password</string>
+    <string name="lmp_section">📅 LMP Date</string>
+    <string name="lmp_desc">First Day of Last Menstrual Period (LMP)</string>
+    <string name="register_continue">✅  Register &amp; Continue</string>
+
+    <!-- Dashboard -->
+    <string name="lunara_header">🌙 LUNARA</string>
+    <string name="maternal_dashboard">Maternal Care Dashboard</string>
+    <string name="profile">Profile</string>
+    <string name="pregnancy_progress">Pregnancy Progress</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="health_tracking">💊  Health Tracking</string>
+    <string name="baby_development">👶  Baby Development</string>
+    <string name="emergency">🚨  Emergency</string>
+    <string name="risk_card">⚠️  Risk Card</string>
+    <string name="alerts">🔔  Alerts</string>
+    <string name="next_medical_visit">📅 Next Medical Visit</string>
+    <string name="name_prefix">Name:</string>
+    <string name="area_prefix">Area:</string>
+    <string name="mobile_prefix">Mobile:</string>
+    <string name="weight_prefix">Current Weight:</string>
+    <string name="week_prefix">Week:</string>
+    <string name="trimester_1">Trimester: First Trimester</string>
+    <string name="trimester_2">Trimester: Second Trimester</string>
+    <string name="trimester_3">Trimester: Third Trimester</string>
+    <string name="tips_1">Eat healthy, stay hydrated, and take your folic acid.</string>
+    <string name="tips_2">Start feeling the baby\'s movements and keep up with checkups.</string>
+    <string name="tips_3">Prepare for labor and monitor baby movements closely.</string>
+    <string name="due_date_prefix">Due Date:</string>
+    <string name="visit_overdue">⚠ Visit Overdue by %d day(s)</string>
+    <string name="days_remaining">🗓 %d day(s) remaining</string>
+    <string name="overdue_caps">OVERDUE</string>
+    <string name="high_risk_badge">🔴 High Risk</string>
+    <string name="low_risk_badge">🟢 Low Risk</string>
+    <string name="logout_message">Are you sure you want to exit LUNARA? Your health data is safe.</string>
+
+    <!-- Admin -->
+    <string name="admin_panel">🏥 ASHA Worker Panel</string>
+    <string name="admin_dashboard">Admin Dashboard</string>
+    <string name="alert_status">🔔 Alert Status</string>
+    <string name="no_alerts">No Emergency Alerts</string>
+    <string name="total_mothers">Total Mothers: %d</string>
+    <string name="high_risk_count">High Risk: %d</string>
+    <string name="registered_mothers">👩 Registered Mothers</string>
+    <string name="checkup_schedule">📅 Checkup Schedule</string>
+    <string name="upcoming_count">Upcoming: %d</string>
+    <string name="overdue_count">Overdue: %d</string>
+    <string name="high_risk_week_count">High Risk (Next 7d): %d</string>
+    <string name="area_summary">📋 Area Summary</string>
+    <string name="view_map">🗺️  View Region Map</string>
+    <string name="clear_alert">✅  Clear Alert</string>
+    <string name="alert_cleared">Emergency alert cleared successfully.</string>
+    <string name="high_monitoring">High Monitoring Required</string>
+    <string name="stable_status">Stable Status</string>
+
+    <!-- Baby Development -->
+    <string name="baby_dev_1">Your baby is the size of a lemon. Major organs are forming.</string>
+    <string name="baby_dev_2">Your baby can hear your voice and is very active!</string>
+    <string name="baby_dev_3">Your baby is getting ready to meet you. Keep counting kicks.</string>
+    <string name="quote_1_1">A grand adventure is about to begin.</string>
+    <string name="quote_1_2">The first trimester is a time of incredible change.</string>
+    <string name="quote_1_3">You are growing a human being. Be kind to yourself.</string>
+    <string name="quote_1_4">Every heartbeat is a miracle in the making.</string>
+    <string name="quote_2_1">The second trimester is often the most comfortable phase.</string>
+    <string name="quote_2_2">Your baby\'s movements are a gentle reminder of life within.</string>
+    <string name="quote_2_3">Enjoy the glow and the growing connection.</string>
+    <string name="quote_2_4">A mother\'s joy begins when new life is stirring inside.</string>
+    <string name="quote_3_1">The finish line is in sight. Stay strong!</string>
+    <string name="quote_3_2">You are brave, you are capable, and you are ready.</string>
+    <string name="quote_3_3">Each day brings you closer to holding your little one.</string>
+    <string name="quote_3_4">The most beautiful thing in the world is about to arrive.</string>
+
+    <!-- Chat Assistant -->
+    <string name="chat_welcome">Hello! I am your Lunara Health Assistant. How can I help you today?</string>
+    <string name="chat_diet">A balanced diet with folic acid, iron, and calcium is vital.</string>
+    <string name="chat_food">Focus on fruits, vegetables, lean proteins, and whole grains.</string>
+    <string name="chat_nutrition">Good nutrition supports your baby\'s development and your health.</string>
+    <string name="chat_exercise">Gentle walking and prenatal yoga are generally safe and helpful.</string>
+    <string name="chat_warning">Seek help for severe pain, bleeding, or sudden swelling.</string>
+    <string name="chat_danger">If you feel no movement or have a seizure, call emergency immediately.</string>
+    <string name="chat_checkup">Regular checkups help monitor your baby\'s growth and your well-being.</string>
+    <string name="chat_visit">Don\'t miss your scheduled ANC visits for a safe pregnancy.</string>
+    <string name="chat_medicine">Only take medications prescribed by your doctor.</string>
+    <string name="chat_vaccine">Ensure you receive the Tetanus and other recommended vaccines.</string>
+    <string name="chat_baby">Your baby is growing and learning every day inside you.</string>
+    <string name="chat_kick">Counting kicks is a great way to monitor your baby\'s activity.</string>
+    <string name="chat_mental">It\'s normal to feel emotional; talk to someone you trust.</string>
+    <string name="chat_depression">Postpartum depression is real and treatable. Seek support early.</string>
+    <string name="chat_sleep">Try sleeping on your side with a pillow between your knees.</string>
+    <string name="chat_bp">Monitoring blood pressure is crucial to prevent preeclampsia.</string>
+    <string name="chat_sugar">A healthy diet helps maintain stable blood sugar levels.</string>
+    <string name="chat_weight">Steady weight gain is a sign of a healthy pregnancy.</string>
+    <string name="chat_labor">Learn about the stages of labor to feel more prepared.</string>
+    <string name="chat_trimester">Each trimester brings unique changes and milestones.</string>
+    <string name="chat_hello">Hi there! How can I assist you with your pregnancy today?</string>
+    <string name="chat_thank">You\'re welcome! I\'m here whenever you need help.</string>
+    <string name="chat_help">I can provide info on diet, exercise, and warning signs. Just ask!</string>
+    <string name="chat_default_response">I\'m not sure about that. Please consult your doctor for medical advice.</string>
+
+    <!-- Risk Alert -->
+    <string name="risk_high_title">URGENT: High Risk Detected</string>
+    <string name="risk_high_msg">Please contact your doctor or go to the nearest hospital immediately.</string>
+    <string name="risk_mod_title">Moderate Risk Warning</string>
+    <string name="risk_mod_msg">Schedule a checkup soon and monitor your symptoms closely.</string>
+    <string name="risk_low_title">Low Risk</string>
+    <string name="risk_low_msg">Everything seems normal, but stay alert for changes.</string>
+    <string name="risk_none_title">No Risk Detected</string>
+    <string name="risk_none_msg">You and your baby are doing great!</string>
+
+    <!-- Emergency -->
+    <string name="emergency_help">Emergency Help</string>
+    <string name="do_not_panic">⚠️ DO NOT PANIC</string>
+    <string name="stay_calm">Stay calm. Help is just one call away.</string>
+    <string name="call_108">📞  Call 108</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+    <string name="theme">Theme</string>
+    <string name="light_mode">Light</string>
+    <string name="dark_mode">Dark</string>
+    <string name="system_default">System Default</string>
+    <string name="notifications">Notifications</string>
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="reminders">Reminders</string>
+    <string name="reminder_frequency">Reminder Frequency</string>
+    <string name="reminder_set_to">Reminder set to</string>
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="logout">Logout</string>
+    <string name="logout_confirm">Are you sure you want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Sidebar -->
+    <string name="dashboard">Dashboard</string>
+    <string name="risk_score">Risk Score</string>
+    <string name="smart_scheduler">Smart Scheduler</string>
+    <string name="doctor_contact">Doctor Contact</string>
+    <string name="chat_assistant">Chat Assistant</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Doctor Contact -->
+    <string name="emergency_helplines">Emergency Helplines</string>
+    <string name="ambulance_108">Ambulance — 108</string>
+    <string name="women_helpline">Women Helpline — 181</string>
+    <string name="your_doctor">Your Doctor</string>
+    <string name="no_doctor_saved">No doctor contact saved</string>
+    <string name="call">📞 Call</string>
+    <string name="whatsapp">💬 WhatsApp</string>
+    <string name="save_doctor">Save Doctor Contact</string>
+
+    <!-- Chat -->
+    <string name="chat_title">Health Assistant</string>
+    <string name="type_message">Type a question…</string>
+    <string name="send">Send</string>
+
+    <!-- Smart Scheduler -->
+    <string name="no_data_found">No pregnancy data found. Please register first.</string>
+    <string name="visit_marked">✅ Visit marked. Thank you!</string>
+    <string name="user_not_found">User data not found.</string>
+    <string name="lmp_not_available">LMP date not available. Please update your profile.</string>
+    <string name="error_loading_data">Error loading data.</string>
+    <string name="trimester_1_short">1st Trimester</string>
+    <string name="trimester_2_short">2nd Trimester</string>
+    <string name="trimester_3_short">3rd Trimester</string>
+    <string name="freq_high_priority">⚡ High Priority — Weekly monitoring</string>
+    <string name="freq_weekly">📅 Weekly checkups recommended</string>
+    <string name="freq_biweekly">📅 Bi-weekly checkups recommended</string>
+    <string name="freq_monthly">📅 Monthly checkups recommended</string>
+    <string name="checkup_overdue_msg">⚠ Checkup Overdue by %d day(s)\nPlease visit your doctor immediately.</string>
+    <string name="high_caps">HIGH</string>
+    <string name="moderate_caps">MODERATE</string>
+    <string name="low_caps">LOW</string>
+    <string name="risk_advice_high">⚠ High risk score detected (%d). Weekly visits strongly recommended regardless of trimester.</string>
+    <string name="risk_advice_moderate">ℹ Moderate risk score (%d). Follow the recommended schedule closely.</string>
+    <string name="labor_reminder_msg">🤱 Labor Preparation Reminder\nPack your hospital bag, review your birth plan, and keep emergency contacts ready.</string>
+</resources>

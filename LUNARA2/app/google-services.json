@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "934481400378",
+    "project_id": "lunara-dde11",
+    "storage_bucket": "lunara-dde11.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934481400378:android:caf37403721affe0889b03",
+        "android_client_info": {
+          "package_name": "com.example.lunara"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZYCoWJ4jXXVl5urMSaFSjOfQX36gzneM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/gradient_header"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="🏥 ASHA Worker Panel"
+                android:textSize="14sp"
+                android:textColor="#BBFFFFFF"
+                android:layout_marginBottom="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Admin Dashboard"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Alert Status Card -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/bg_alert_card"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="🔔 Alert Status"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#64748B"
+                android:layout_marginBottom="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/alertStatusText"
+                android:text="No Emergency Alerts"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#16A34A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Stat Cards Row 1: Total Mothers + High Risk -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/bg_stat_card"
+                android:elevation="3dp"
+                android:padding="14dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView android:text="👩" android:textSize="24sp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/totalMothersText"
+                    android:text="Total Mothers: 0"
+                    android:textSize="13sp" android:textStyle="bold"
+                    android:textColor="#0F172A"
+                    android:gravity="center"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/bg_stat_card"
+                android:elevation="3dp"
+                android:padding="14dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView android:text="⚠️" android:textSize="24sp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/highRiskText"
+                    android:text="High Risk: 0"
+                    android:textSize="13sp" android:textStyle="bold"
+                    android:textColor="#DC2626"
+                    android:gravity="center"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Stat Cards Row 2: Alerts Today + Region -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/bg_stat_card"
+                android:elevation="3dp"
+                android:padding="14dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView android:text="🚨" android:textSize="24sp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/alertsTodayText"
+                    android:text="Alerts Today: 0"
+                    android:textSize="13sp" android:textStyle="bold"
+                    android:textColor="#92400E"
+                    android:gravity="center"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/bg_stat_card"
+                android:elevation="3dp"
+                android:padding="14dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView android:text="📍" android:textSize="24sp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/regionStatsText"
+                    android:text="Region Stats: -"
+                    android:textSize="13sp" android:textStyle="bold"
+                    android:textColor="#0F172A"
+                    android:gravity="center"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Area Summary Card -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_elevated"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="📋 Area Summary"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#0F766E"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView android:id="@+id/areaSummary"
+                android:textSize="14sp" android:textColor="#374151"
+                android:layout_marginBottom="4dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+            <TextView android:id="@+id/trimesterSummary"
+                android:textSize="14sp" android:textColor="#6B7280"
+                android:layout_marginBottom="6dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+            <TextView android:id="@+id/riskSummary"
+                android:textStyle="bold" android:textSize="14sp"
+                android:textColor="#DC2626"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+            <Button android:id="@+id/mapBtn"
+                android:text="🗺️  View Region Map"
+                android:textAllCaps="false"
+                android:backgroundTint="#0F766E"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent" android:layout_height="52dp"/>
+
+            <Button android:id="@+id/clearAlertBtn"
+                android:text="✅  Clear Alert"
+                android:textAllCaps="false"
+                android:backgroundTint="#16A34A"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:layout_width="match_parent" android:layout_height="50dp"/>
+        </LinearLayout>
+
+        <!-- Registered Mothers Section Header -->
+        <TextView
+            android:text="👩 Registered Mothers"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#0F766E"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- RecyclerView for Mothers List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/motherRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"/>
+
+        <!-- ── NEW: Checkup Schedule Section ── -->
+        <TextView
+            android:text="📅 Checkup Schedule"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#0F766E"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Checkup Mini-Stat Row -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/bg_stat_card"
+                android:elevation="3dp"
+                android:padding="12dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView android:text="🗓" android:textSize="20sp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/checkupUpcomingCount"
+                    android:text="Upcoming: 0"
+                    android:textSize="12sp" android:textStyle="bold"
+                    android:textColor="#0F766E" android:gravity="center"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/bg_stat_card"
+                android:elevation="3dp"
+                android:padding="12dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView android:text="⚠️" android:textSize="20sp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/checkupOverdueCount"
+                    android:text="Overdue: 0"
+                    android:textSize="12sp" android:textStyle="bold"
+                    android:textColor="#DC2626" android:gravity="center"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/bg_stat_card"
+                android:elevation="3dp"
+                android:padding="12dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView android:text="🔴" android:textSize="20sp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/checkupHighRiskCount"
+                    android:text="High-Risk This Week: 0"
+                    android:textSize="11sp" android:textStyle="bold"
+                    android:textColor="#DC2626" android:gravity="center"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Checkup RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/checkupRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"/>
+
+    </LinearLayout>
+</ScrollView>

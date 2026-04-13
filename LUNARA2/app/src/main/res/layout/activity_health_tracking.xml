@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header -->
+        <TextView
+            android:text="📊 Health Tracking"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_dark"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Record your health vitals"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Input Card -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_elevated"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Health Vitals"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/hemoInput"
+                android:hint="Hemoglobin (g/dL)"
+                android:inputType="numberDecimal"
+                android:background="@drawable/bg_input_field"
+                android:textSize="15sp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/bpInput"
+                android:hint="Blood Pressure (e.g. 120/80)"
+                android:background="@drawable/bg_input_field"
+                android:textSize="15sp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/sugarInput"
+                android:hint="Blood Sugar"
+                android:inputType="numberDecimal"
+                android:background="@drawable/bg_input_field"
+                android:textSize="15sp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/weightInput"
+                android:hint="Weight (kg)"
+                android:inputType="numberDecimal"
+                android:background="@drawable/bg_input_field"
+                android:textSize="15sp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/notesInput"
+                android:hint="Doctor Notes"
+                android:background="@drawable/bg_input_field"
+                android:textSize="15sp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/saveHealthBtn"
+                android:text="Save Health Data"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/primary"
+                android:textColor="@color/text_on_primary"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"/>
+        </LinearLayout>
+
+        <!-- Chart Card -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_elevated"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="📈 Health Trends"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/healthChart"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"/>
+        </LinearLayout>
+
+        <!-- Risk Score Card -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_elevated"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/riskLabel"
+                android:text="⚠️ Pregnancy Risk Score"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/primary"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ProgressBar
+                android:id="@+id/riskProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_risk"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/riskStatus"
+                android:text="Risk Level: -"
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core Brand — Midnight Blue (Slate 800) -->
+    <color name="primary">#1E293B</color>
+    <color name="primary_dark">#0F172A</color>
+    <color name="primary_light">#334155</color>
+
+    <!-- Secondary — Indigo (Indigo 600) -->
+    <color name="secondary">#4F46E5</color>
+    <color name="secondary_dark">#3730A3</color>
+
+    <!-- Accent — Soft Coral (Rose 400) -->
+    <color name="accent">#FB7185</color>
+
+    <!-- Background & Surface -->
+    <color name="background">#F8FAFC</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_stroke">#E2E8F0</color>
+    <color name="input_background">#F1F5F9</color>
+    <color name="surface">#F1F5F9</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Typography -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    <color name="text_hint">#94A3B8</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Risk Colors (Semantic) -->
+    <color name="danger">#B91C1C</color>    <!-- High Risk -->
+    <color name="emergency_red">#DC2626</color>
+    <color name="warning">#F59E0B</color>   <!-- Moderate Risk -->
+    <color name="success">#0D9488</color>   <!-- Low Risk -->
+
+    <!-- Gradients -->
+    <color name="gradient_start">#4F46E5</color>
+    <color name="gradient_end">#FB7185</color>
+
+    <!-- UI Elements -->
+    <color name="ripple_primary">#224F46E5</color>
+    <color name="ripple_danger">#22B91C1C</color>
+</resources>

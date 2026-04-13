@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="32dp"
+    android:paddingEnd="32dp"
+    android:paddingBottom="48dp"
+    android:background="@drawable/gradient_bg">
+
+    <!-- Moon icon -->
+    <TextView
+        android:text="🌙"
+        android:textSize="72sp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- App name -->
+    <TextView
+        android:text="LUNARA"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:letterSpacing="0.2"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Tagline -->
+    <TextView
+        android:text="Maternal Care Connect"
+        android:textSize="18sp"
+        android:textColor="#DDFFFFFF"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Smart Pregnancy Monitoring &amp; Alerts"
+        android:textSize="14sp"
+        android:textColor="#BBFFFFFF"
+        android:gravity="center"
+        android:layout_marginBottom="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Gradient CTA Button with gradient background -->
+    <Button
+        android:id="@+id/startBtn"
+        android:text="Get Started →"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/btn_gradient_cta"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:elevation="10dp"
+        android:stateListAnimator="@null"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+    <!-- Subtext below button -->
+    <TextView
+        android:text="Free • Offline-capable • ASHA-verified"
+        android:textSize="12sp"
+        android:textColor="#99FFFFFF"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

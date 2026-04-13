@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/background"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Emergency Icon -->
+    <FrameLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="20dp">
+
+        <View
+            android:background="@drawable/bg_emergency_glow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:text="🚑"
+            android:textSize="56sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <TextView
+        android:text="Emergency Help"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/emergency_red"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Alert Card -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/bg_alert_card"
+        android:elevation="4dp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="⚠️ DO NOT PANIC"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/danger"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Stay calm. Help is just one call away."
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/callBtn"
+        android:text="📞  Call 108"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@drawable/btn_danger_state"
+        android:textColor="@color/text_on_primary"
+        android:elevation="6dp"
+        android:stateListAnimator="@null"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"/>
+
+</LinearLayout>

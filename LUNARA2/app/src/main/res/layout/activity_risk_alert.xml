@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header -->
+        <TextView
+            android:text="⚠️ Pregnancy Risk Assessment"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_dark"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Please select any symptoms you are experiencing"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Symptom Card -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_elevated"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="🩺 Symptoms Checklist"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/bleeding"
+                android:text="Heavy Vaginal Bleeding"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:paddingStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/severePain"
+                android:text="Severe Abdominal Pain"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:paddingStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/noMovement"
+                android:text="Reduced / No Baby Movement"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:paddingStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/seizure"
+                android:text="Seizures / Unconsciousness"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:paddingStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/highFever"
+                android:text="High Fever"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:paddingStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/swelling"
+                android:text="Severe Swelling (Face / Hands)"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:paddingStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/headache"
+                android:text="Severe Headache / Blurred Vision"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:paddingStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/vomiting"
+                android:text="Continuous Vomiting"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:paddingStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/backPain"
+                android:text="Back Pain"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:paddingStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/tiredness"
+                android:text="Tiredness / Fatigue"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:paddingStart="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/checkRiskBtn"
+            android:text="Evaluate Risk"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/text_on_primary"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"/>
+
+        <!-- Result Card -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_elevated"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/riskResult"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,212 @@
+<resources>
+    <string name="app_name">ലുനാറ (LUNARA)</string>
+    <string name="tagline">മാതൃ പരിചരണ കണക്ട്</string>
+    <string name="subtitle">സ്മാർട്ട് ഗർഭകാല നിരീക്ഷണവും അലേർട്ടുകളും</string>
+    <string name="get_started">ആരംഭിക്കുക →</string>
+    <string name="free_tagline">സൗജന്യം • ഓഫ്‌ലൈൻ സൗകര്യം • ആശാ-വെരിഫൈഡ്</string>
+
+    <!-- Role Selection -->
+    <string name="welcome_lunara">ലുനാറയിലേക്ക് സ്വാഗതം</string>
+    <string name="choose_role">തുടരുന്നതിന് നിങ്ങളുടെ റോൾ തിരഞ്ഞെടുക്കുക</string>
+    <string name="pregnant_woman">ഗർഭിണി</string>
+    <string name="asha_worker">ആശാ വർക്കർ</string>
+    <string name="continue_woman">🤰 ഗർഭിണിയായി തുടരുക</string>
+    <string name="continue_asha">🏥 ആശാ വർക്കറായി തുടരുക</string>
+    <string name="track_pregnancy">നിങ്ങളുടെ ഗർഭകാലവും ആരോഗ്യവും ട്രാക്ക് ചെയ്യുക</string>
+    <string name="manage_care">രോഗീ പരിചരണം നിരീക്ഷിക്കുകയും നിയന്ത്രിക്കുകയും ചെയ്യുക</string>
+
+    <!-- Login -->
+    <string name="welcome_back">വീണ്ടും സ്വാഗതം</string>
+    <string name="woman_login">ഗർഭിണികൾക്കുള്ള ലോഗിൻ</string>
+    <string name="mobile_number">📱 മൊബൈൽ നമ്പർ</string>
+    <string name="password">🔒 പാസ്‌വേഡ്</string>
+    <string name="login">ലോഗിൻ</string>
+    <string name="no_account">അക്കൗണ്ട് ഇല്ലേ? രജിസ്റ്റർ ചെയ്യുക</string>
+
+    <!-- Registration -->
+    <string name="registration">📋 രജിസ്ട്രേഷൻ</string>
+    <string name="create_profile">നിങ്ങളുടെ ഗർഭകാല പ്രൊഫൈൽ സൃഷ്ടിക്കുക</string>
+    <string name="personal_info">വ്യക്തിഗത വിവരങ്ങൾ</string>
+    <string name="full_name">മുഴുവൻ പേര്</string>
+    <string name="area_village">സ്ഥലം / ഗ്രാമം</string>
+    <string name="weight_kg">ഭാരം (കിലോ)</string>
+    <string name="create_password">പാസ്‌വേഡ് സൃഷ്ടിക്കുക</string>
+    <string name="lmp_section">📅 എൽ.എം.പി (LMP) തീയതി</string>
+    <string name="lmp_desc">അവസാന ആർത്തവത്തിന്റെ ആദ്യ ദിവസം</string>
+    <string name="register_continue">✅ രജിസ്റ്റർ ചെയ്ത് തുടരുക</string>
+
+    <!-- Dashboard -->
+    <string name="lunara_header">🌙 ലുനാറ</string>
+    <string name="maternal_dashboard">മാതൃ പരിചരണ ഡാഷ്‌ബോർഡ്</string>
+    <string name="profile">പ്രൊഫൈൽ</string>
+    <string name="pregnancy_progress">ഗർഭകാല പുരോഗതി</string>
+    <string name="quick_actions">പെട്ടെന്നുള്ള പ്രവർത്തനങ്ങൾ</string>
+    <string name="health_tracking">💊 ആരോഗ്യ നിരീക്ഷണം</string>
+    <string name="baby_development">👶 കുഞ്ഞിന്റെ വളർച്ച</string>
+    <string name="emergency">🚨 അടിയന്തരാവസ്ഥ</string>
+    <string name="risk_card">⚠️ റിസ്ക് കാർഡ്</string>
+    <string name="alerts">🔔 അലേർട്ടുകൾ</string>
+    <string name="next_medical_visit">📅 അടുത്ത ഡോക്ടർ സന്ദർശനം</string>
+    <string name="name_prefix">പേര്:</string>
+    <string name="area_prefix">സ്ഥലം:</string>
+    <string name="mobile_prefix">മൊബൈൽ:</string>
+    <string name="weight_prefix">നിലവിലെ ഭാരം:</string>
+    <string name="week_prefix">ആഴ്ച:</string>
+    <string name="trimester_1">ത്രൈമാസം: ഒന്നാം ത്രൈമാസം</string>
+    <string name="trimester_2">ത്രൈമാസം: രണ്ടാം ത്രൈമാസം</string>
+    <string name="trimester_3">ത്രൈമാസം: മൂന്നാം ത്രൈമാസം</string>
+    <string name="tips_1">ആരോഗ്യകരമായ ഭക്ഷണം കഴിക്കുക, ധാരാളം വെള്ളം കുടിക്കുക, ഫോളിക് ആസിഡ് കഴിക്കുക.</string>
+    <string name="tips_2">കുഞ്ഞിന്റെ ചലനങ്ങൾ ശ്രദ്ധിച്ചു തുടങ്ങുക, കൃത്യസമയത്ത് പരിശോധനകൾ നടത്തുക.</string>
+    <string name="tips_3">പ്രസവത്തിനായി തയ്യാറെടുക്കുക, കുഞ്ഞിന്റെ ചലനങ്ങൾ സൂക്ഷ്മമായി നിരീക്ഷിക്കുക.</string>
+    <string name="due_date_prefix">പ്രസവ തീയതി:</string>
+    <string name="visit_overdue">⚠ സന്ദർശനം %d ദിവസം വൈകിയിരിക്കുന്നു</string>
+    <string name="days_remaining">🗓 %d ദിവസം ബാക്കിയുണ്ട്</string>
+    <string name="overdue_caps">കാലാവധി കഴിഞ്ഞു</string>
+    <string name="high_risk_badge">🔴 ഉയർന്ന റിസ്ക്</string>
+    <string name="low_risk_badge">🟢 കുറഞ്ഞ റിസ്ക്</string>
+    <string name="logout_message">നിങ്ങൾക്ക് ലുനാറയിൽ നിന്ന് പുറത്തുകടക്കണോ? നിങ്ങളുടെ ആരോഗ്യ വിവരങ്ങൾ സുരക്ഷിതമാണ്.</string>
+
+    <!-- Admin -->
+    <string name="admin_panel">🏥 ആശാ വർക്കർ പാനൽ</string>
+    <string name="admin_dashboard">അഡ്മിൻ ഡാഷ്‌ബോർഡ്</string>
+    <string name="alert_status">🔔 അലേർട്ട് സ്റ്റാറ്റസ്</string>
+    <string name="no_alerts">അടിയന്തര അലേർട്ടുകൾ ഒന്നുമില്ല</string>
+    <string name="total_mothers">ആകെ ഗർഭിണികൾ: %d</string>
+    <string name="high_risk_count">ഉയർന്ന റിസ്ക്: %d</string>
+    <string name="registered_mothers">👩 രജിസ്റ്റർ ചെയ്ത ഗർഭിണികൾ</string>
+    <string name="checkup_schedule">📅 പരിശോധനാ ഷെഡ്യൂൾ</string>
+    <string name="area_summary">📋 പ്രദേശത്തിന്റെ സംഗ്രഹം</string>
+    <string name="view_map">🗺️ മാപ്പ് കാണുക</string>
+    <string name="clear_alert">✅ അലേർട്ട് ഒഴിവാക്കുക</string>
+    <string name="upcoming_count">വരാനിരിക്കുന്നത്: %d</string>
+    <string name="overdue_count">കാലാവധി കഴിഞ്ഞത്: %d</string>
+    <string name="high_risk_week_count">ഈ ആഴ്ചയിലെ ഉയർന്ന റിസ്ക്: %d</string>
+    <string name="high_monitoring">⚠ കർശനമായ നിരീക്ഷണം ആവശ്യമാണ്</string>
+    <string name="stable_status">സ്ഥിരതയുള്ള ഗർഭകാലം</string>
+    <string name="alert_cleared">അലേർട്ട് വിജയകരമായി ഒഴിവാക്കി</string>
+
+    <!-- Emergency -->
+    <string name="emergency_help">അടിയന്തര സഹായം</string>
+    <string name="do_not_panic">⚠️ പരിഭ്രമിക്കരുത്</string>
+    <string name="stay_calm">ശാന്തത പാലിക്കുക. സഹായത്തിനായി ഉടൻ വിളിക്കുക.</string>
+    <string name="call_108">📞 108 വിളിക്കുക</string>
+
+    <!-- Settings -->
+    <string name="settings">ക്രമീകരണങ്ങൾ</string>
+    <string name="language">ഭാഷ</string>
+    <string name="theme">തീം</string>
+    <string name="light_mode">ലൈറ്റ്</string>
+    <string name="dark_mode">ഡാർക്ക്</string>
+    <string name="system_default">സിസ്റ്റം ഡിഫോൾട്ട്</string>
+    <string name="notifications">അറിയിപ്പുകൾ</string>
+    <string name="enable_notifications">അറിയിപ്പുകൾ പ്രവർത്തനക്ഷമമാക്കുക</string>
+    <string name="reminders">ഓർമ്മപ്പെടുത്തലുകൾ</string>
+    <string name="reminder_frequency">ഓർമ്മപ്പെടുത്തൽ ആവൃത്തി</string>
+    <string name="reminder_set_to">ഓർമ്മപ്പെടുത്തൽ ക്രമീകരിച്ചിരിക്കുന്നത്</string>
+    <string name="daily">ദിവസവും</string>
+    <string name="weekly">ആഴ്ചതോറും</string>
+    <string name="edit_profile">പ്രൊഫൈൽ എഡിറ്റ് ചെയ്യുക</string>
+    <string name="logout">പുറത്തുകടക്കുക</string>
+    <string name="logout_confirm">നിങ്ങൾക്ക് പുറത്തുകടക്കണമെന്ന് ഉറപ്പാണോ?</string>
+    <string name="yes">അതെ</string>
+    <string name="no">അല്ല</string>
+    <string name="cancel">റദ്ദാക്കുക</string>
+
+    <!-- Sidebar -->
+    <string name="dashboard">ഡാഷ്‌ബോർഡ്</string>
+    <string name="risk_score">റിസ്ക് സ്കോർ</string>
+    <string name="smart_scheduler">സ്മാർട്ട് ഷെഡ്യൂളർ</string>
+    <string name="doctor_contact">ഡോക്ടറുടെ കോൺടാക്റ്റ്</string>
+    <string name="chat_assistant">ചാറ്റ് അസിസ്റ്റന്റ്</string>
+    <string name="navigation_drawer_open">നാവിഗേഷൻ ഡ്രോയർ തുറക്കുക</string>
+    <string name="navigation_drawer_close">നാവിഗേഷൻ ഡ്രോയർ അടയ്ക്കുക</string>
+
+    <!-- Doctor Contact -->
+    <string name="emergency_helplines">അടിയന്തര ഹെൽപ്പ് ലൈനുകൾ</string>
+    <string name="ambulance_108">ആംബുലൻസ് — 108</string>
+    <string name="women_helpline">വനിതാ ഹെൽപ്പ് ലൈൻ — 181</string>
+    <string name="your_doctor">നിങ്ങളുടെ ഡോക്ടർ</string>
+    <string name="no_doctor_saved">ഡോക്ടറുടെ കോൺടാക്റ്റ് സേവ് ചെയ്തിട്ടില്ല</string>
+    <string name="call">📞 വിളിക്കുക</string>
+    <string name="whatsapp">💬 വാട്ട്‌സ്ആപ്പ്</string>
+    <string name="save_doctor">ഡോക്ടറുടെ കോൺടാക്റ്റ് സേവ് ചെയ്യുക</string>
+
+    <!-- Chat -->
+    <string name="chat_title">ഹെൽത്ത് അസിസ്റ്റന്റ്</string>
+    <string name="type_message">ചോദ്യം ടൈപ്പ് ചെയ്യുക…</string>
+    <string name="send">അയക്കുക</string>
+    <string name="chat_welcome">👋 ഹലോ! ഞാൻ നിങ്ങളുടെ ലുനാറ ഹെൽത്ത് അസിസ്റ്റന്റ് ആണ്.\n\nഇവയെക്കുറിച്ച് എന്നോട് ചോദിക്കൂ:\n• ഭക്ഷണക്രമം\n• വ്യായാമം\n• മുന്നറിയിപ്പ് ലക്ഷണങ്ങൾ\n• പരിശോധനകൾ\n• മരുന്നുകൾ\n• കുഞ്ഞിന്റെ വളർച്ച\n• മാനസികാരോഗ്യം</string>
+    <string name="chat_diet">🥗 ഇരുമ്പ്, ഫോളിക് ആസിഡ്, കാൽസ്യം, പ്രോട്ടീൻ എന്നിവ അടങ്ങിയ സമീകൃതാഹാരം കഴിക്കുക. പച്ചക്കറികൾ, പരിപ്പ് വർഗ്ഗങ്ങൾ, മുട്ട, പാൽ, പഴങ്ങൾ എന്നിവ ഉൾപ്പെടുത്തുക. പച്ചമീൻ, പാസ്ചറൈസ് ചെയ്യാത്ത പാൽ ഉൽപ്പന്നങ്ങൾ, അമിതമായ കഫീൻ എന്നിവ ഒഴിവാക്കുക.</string>
+    <string name="chat_food">🍎 ശുപാർശ ചെയ്യുന്നവ: പഴങ്ങൾ, പച്ചക്കറികൾ, ധാന്യങ്ങൾ, പ്രോട്ടീൻ. ദിവസവും 8-10 ഗ്ലാസ് വെള്ളം കുടിക്കുക. നിർദ്ദേശിച്ച വിറ്റാമിനുകൾ കഴിക്കുക.</string>
+    <string name="chat_nutrition">💊 പ്രധാന പോഷകങ്ങൾ: ഫോളിക് ആസിഡ്, ഇരുമ്പ്, കാൽസ്യം, ഡി.എച്ച്.എ. ഡോക്ടറുടെ നിർദ്ദേശപ്രകാരം സപ്ലിമെന്റുകൾ കഴിക്കുക.</string>
+    <string name="chat_exercise">🚶‍♀️ നടത്തം (ദിവസവും 30 മിനിറ്റ്), യോഗ, ലളിതമായ സ്ട്രെച്ചിംഗ് എന്നിവ സുരക്ഷിതമാണ്. ഭാരമുള്ളവ ഉയർത്തുന്നതും കഠിനമായ കായിക വിനോദങ്ങളും ഒഴിവാക്കുക.</string>
+    <string name="chat_warning">🚨 താഴെ പറയുന്നവ കണ്ടാൽ ഉടൻ സഹായം തേടുക: കഠിനമായ തലവേദന, കാഴ്ച മങ്ങൽ, പെട്ടെന്നുള്ള നീർവീക്കം, രക്തസ്രാവം, കുഞ്ഞിന്റെ ചലനം കുറയുക, കഠിനമായ വയറുവേദന.</string>
+    <string name="chat_danger">⚠️ അപകട ലക്ഷണങ്ങൾ: നിർത്താതെയുള്ള ഛർദ്ദി, നെഞ്ചുവേദന, ശ്വാസതടസ്സം, ഉയർന്ന ബി.പി, പനി.</string>
+    <string name="chat_checkup">📅 സാധാരണ ഷെഡ്യൂൾ: 28 ആഴ്ച വരെ മാസത്തിലൊരിക്കൽ, 36 ആഴ്ച വരെ രണ്ടാഴ്ചയിലൊരിക്കൽ, പിന്നീട് ആഴ്ചതോറും. ഉയർന്ന റിസ്ക് ഉള്ളവർക്ക് കൂടുതൽ പരിശോധനകൾ ആവശ്യമാണ്.</string>
+    <string name="chat_visit">🏥 ഓരോ സന്ദർശനത്തിലും: ബി.പി, ഭാരം, മൂത്രപരിശോധന, കുഞ്ഞിന്റെ ഹൃദയമിടിപ്പ് എന്നിവ പരിശോധിക്കുന്നു. സാധാരണയായി 12, 20, 36 ആഴ്ചകളിൽ അൾട്രാസൗണ്ട് നടത്താറുണ്ട്.</string>
+    <string name="chat_medicine">💊 ഡോക്ടർ നിർദ്ദേശിച്ച മരുന്നുകൾ മാത്രം കഴിക്കുക. സ്വയം ചികിത്സ ഒഴിവാക്കുക.</string>
+    <string name="chat_vaccine">💉 ശുപാർശ ചെയ്യുന്നവ: ടിഡാപ്പ് വാക്സിൻ, ഫ്ലൂ വാക്സിൻ. കോവിഡ് വാക്സിൻ സുരക്ഷിതമാണ്. ഡോക്ടറോട് ചോദിക്കുക.</string>
+    <string name="chat_baby">👶 കുഞ്ഞിന്റെ വളർച്ച: 6 ആഴ്ചയിൽ ഹൃദയമിടിപ്പ്, 16-20 ആഴ്ചകളിൽ ചലനം, 24 ആഴ്ചയിൽ ജീവൻ നിലനിർത്താനുള്ള ശേഷി, 37 ആഴ്ചയിൽ പൂർണ്ണ വളർച്ച.</string>
+    <string name="chat_kick">🦶 28 ആഴ്ച മുതൽ ചലനങ്ങൾ എണ്ണുക. 2 മണിക്കൂറിനുള്ളിൽ കുറഞ്ഞത് 10 ചലനങ്ങളെങ്കിലും അനുഭവപ്പെടണം. കുറവുണ്ടെങ്കിൽ ഡോക്ടറെ അറിയിക്കുക.</string>
+    <string name="chat_mental">🧠 ഗർഭകാലത്തെ ഉത്കണ്ഠയും മൂഡ് മാറ്റങ്ങളും സ്വാഭാവികമാണ്. ശ്വസന വ്യായാമങ്ങൾ ചെയ്യുക, പ്രിയപ്പെട്ടവരുമായി സംസാരിക്കുക. വിഷാദം നീണ്ടുനിൽക്കുകയാണെങ്കിൽ ഡോക്ടറോട് സംസാരിക്കുക.</string>
+    <string name="chat_depression">💚 പ്രസവാനന്തര വിഷാദം ചികിത്സിക്കാവുന്നതാണ്. ലക്ഷണങ്ങൾ: വിട്ടുമാറാത്ത സങ്കടം, താൽപ്പര്യക്കുറവ്. ഡോക്ടറുടെയോ ഹെൽപ്പ് ലൈൻ 181-ന്റെയോ സഹായം തേടുക.</string>
+    <string name="chat_sleep">😴 20 ആഴ്ചയ്ക്ക് ശേഷം ഇടത് വശം ചരിഞ്ഞ് കിടക്കുക. തലയിണകൾ ഉപയോഗിക്കാം. മലർന്ന് കിടക്കുന്നത് ഒഴിവാക്കുക. 7-9 മണിക്കൂർ ഉറങ്ങുക.</string>
+    <string name="chat_bp">🩺 സാധാരണ ബി.പി: 120/80-ന് താഴെ. ഉയർന്ന ബി.പി (>140/90) പ്രീ-എക്ലാംപ്സിയയുടെ ലക്ഷണമാകാം. കൃത്യമായി നിരീക്ഷിക്കുക.</string>
+    <string name="chat_sugar">🍬 24-28 ആഴ്ചകളിൽ പ്രമേഹ പരിശോധന നടത്തുക. ഭക്ഷണക്രമത്തിലൂടെയും വ്യായാമത്തിലൂടെയും ഇത് നിയന്ത്രിക്കാം.</string>
+    <string name="chat_weight">⚖️ ആരോഗ്യകരമായ ഭാരം വർദ്ധനവ്: സാധാരണ ബി.എം.ഐ ഉള്ളവർക്ക് 11-16 കിലോ. അമിതമായ ഭാരം വർദ്ധനവ് നീർവീക്കത്തിന്റെ ലക്ഷണമാകാം.</string>
+    <string name="chat_labor">🤱 പ്രസവ ലക്ഷണങ്ങൾ: കൃത്യമായ ഇടവേളകളിലുള്ള വേദന, വെള്ളം പോകുക, നടുവേദന. വേദന ശക്തമാകുമ്പോൾ ആശുപത്രിയിലേക്ക് പോകുക.</string>
+    <string name="chat_trimester">📆 ഒന്നാം ത്രൈമാസം (1-12 ആഴ്ച): അവയവ രൂപീകരണം. രണ്ടാം (13-27): വളർച്ചയും ചലനവും. മൂന്നാം (28-40): പൂർണ്ണ വളർച്ചയും പ്രസവത്തിനുള്ള തയ്യാറെടുപ്പും.</string>
+    <string name="chat_hello">👋 ഹലോ! ഇന്ന് എനിക്ക് നിങ്ങളെ എങ്ങനെ സഹായിക്കാനാകും? ഗർഭകാലത്തെക്കുറിച്ച് എന്ത് വേണമെങ്കിലും ചോദിക്കാം.</string>
+    <string name="chat_thank">😊 സ്വാഗതം! ആരോഗ്യത്തോടെയിരിക്കുക. സഹായിക്കാൻ ഞാൻ എപ്പോഴും ഇവിടെയുണ്ട്.</string>
+    <string name="chat_help">ℹ️ എനിക്ക് ഇവയെക്കുറിച്ച് മറുപടി നൽകാനാകും: ഭക്ഷണം, വ്യായാമം, അപകട ലക്ഷണങ്ങൾ, പരിശോധനകൾ, മരുന്നുകൾ, കുഞ്ഞിന്റെ വളർച്ച, മാനസികാരോഗ്യം, ഉറക്കം, ബി.പി, പ്രമേഹം, ഭാരം, പ്രസവ ലക്ഷണങ്ങൾ.</string>
+    <string name="chat_default_response">🤔 എനിക്ക് ഇതിനെക്കുറിച്ച് ഉറപ്പില്ല. ഭക്ഷണം, വ്യായാമം, ലക്ഷണങ്ങൾ, മരുന്നുകൾ എന്നിവയെക്കുറിച്ച് ചോദിച്ചു നോക്കൂ.\n\nഅടിയന്തര സാഹചര്യങ്ങളിൽ 108 വിളിക്കുക.</string>
+
+    <!-- Smart Scheduler -->
+    <string name="no_data_found">ഗർഭകാല വിവരങ്ങൾ ലഭ്യമല്ല. ദയവായി ആദ്യം രജിസ്റ്റർ ചെയ്യുക.</string>
+    <string name="visit_marked">✅ സന്ദർശനം രേഖപ്പെടുത്തി. നന്ദി!</string>
+    <string name="user_not_found">ഉപയോക്തൃ വിവരങ്ങൾ ലഭ്യമല്ല.</string>
+    <string name="lmp_not_available">എൽ.എം.പി വിവരങ്ങൾ ലഭ്യമല്ല. ദയവായി പ്രൊഫൈൽ പുതുക്കുക.</string>
+    <string name="error_loading_data">വിവരങ്ങൾ ശേഖരിക്കുന്നതിൽ പരാജയപ്പെട്ടു.</string>
+    <string name="trimester_1_short">ഒന്നാം ത്രൈമാസം</string>
+    <string name="trimester_2_short">രണ്ടാം ത്രൈമാസം</string>
+    <string name="trimester_3_short">മൂന്നാം ത്രൈമാസം</string>
+    <string name="freq_high_priority">⚡ ഉയർന്ന മുൻഗണന — ആഴ്ചതോറുമുള്ള നിരീക്ഷണം</string>
+    <string name="freq_weekly">📅 ആഴ്ചതോറുമുള്ള പരിശോധനകൾ ശുപാർശ ചെയ്യുന്നു</string>
+    <string name="freq_biweekly">📅 രണ്ടാഴ്ചയിലൊരിക്കലുള്ള പരിശോധനകൾ ശുപാർശ ചെയ്യുന്നു</string>
+    <string name="freq_monthly">📅 മാസത്തിലൊരിക്കലുള്ള പരിശോധനകൾ ശുപാർശ ചെയ്യുന്നു</string>
+    <string name="checkup_overdue_msg">⚠ പരിശോധന %d ദിവസം വൈകിയിരിക്കുന്നു\nദയവായി ഉടൻ ഡോക്ടറെ കാണുക.</string>
+    <string name="high_caps">ഉയർന്നത്</string>
+    <string name="moderate_caps">മിതമായത്</string>
+    <string name="low_caps">കുറഞ്ഞത്</string>
+    <string name="risk_advice_high">⚠ ഉയർന്ന റിസ്ക് സ്കോർ കണ്ടെത്തി (%d). ത്രൈമാസം പരിഗണിക്കാതെ ആഴ്ചതോറുമുള്ള പരിശോധനകൾ അത്യാവശ്യമാണ്.</string>
+    <string name="risk_advice_moderate">ℹ മിതമായ റിസ്ക് സ്കോർ (%d). പരിശോധനാ ഷെഡ്യൂൾ കൃത്യമായി പാലിക്കുക.</string>
+    <string name="labor_reminder_msg">🤱 പ്രസവ തയ്യാറെടുപ്പ് ഓർമ്മപ്പെടുത്തൽ\nആശുപത്രി ബാഗ് തയ്യാറാക്കുക, പ്രസവ പ്ലാൻ പരിശോധിക്കുക, അടിയന്തര കോൺടാക്റ്റുകൾ തയ്യാറാക്കി വയ്ക്കുക.</string>
+
+    <!-- Risk Alert -->
+    <string name="risk_high_title">🚨 ഉയർന്ന റിസ്ക് / അടിയന്തരാവസ്ഥ</string>
+    <string name="risk_high_msg">ഉടനടി വൈദ്യസഹായം തേടുക!</string>
+    <string name="risk_mod_title">⚠ മിതമായ റിസ്ക്</string>
+    <string name="risk_mod_msg">ഉടൻ ഡോക്ടറെ കണ്ട് സംസാരിക്കുക.</string>
+    <string name="risk_low_title">ℹ കുറഞ്ഞ റിസ്ക്</string>
+    <string name="risk_low_msg">ലക്ഷണങ്ങൾ നിരീക്ഷിക്കുകയും വിശ്രമിക്കുകയും ചെയ്യുക.</string>
+    <string name="risk_none_title">✔ റിസ്ക് ഇല്ല</string>
+    <string name="risk_none_msg">ആശങ്കപ്പെടേണ്ട ലക്ഷണങ്ങളൊന്നും കണ്ടെത്തിയില്ല.</string>
+
+    <!-- Baby Development Quotes -->
+    <string name="quote_1_1">നിങ്ങൾക്കുള്ളിലെ ഓരോ ഹൃദയമിടിപ്പും ഒരു അത്ഭുതമാണ്.</string>
+    <string name="quote_1_2">നിങ്ങൾ ഒരു ജീവൻ നൽകുകയാണ് — അത് അതിശക്തമാണ്.</string>
+    <string name="quote_1_3">ചെറിയ തുടക്കങ്ങൾ വലിയ അത്ഭുതങ്ങളിലേക്ക് നയിക്കുന്നു.</string>
+    <string name="quote_1_4">നന്നായി വിശ്രമിക്കുക, നിങ്ങളുടെ ശരീരം അത്ഭുതകരമായ ഒന്നാണ് ചെയ്യുന്നത്.</string>
+    <string name="quote_2_1">നിങ്ങളുടെ കുഞ്ഞ് നിങ്ങളുടെ സ്നേഹം ഓരോ ദിവസവും അനുഭവിക്കുന്നു.</string>
+    <string name="quote_2_2">ജീവൻ വഹിക്കുമ്പോൾ നിങ്ങൾക്ക് പ്രത്യേകമായ ഒരു തിളക്കമുണ്ടാകും.</string>
+    <string name="quote_2_3">ഓരോ ദിവസവും നിങ്ങളുടെ അത്ഭുതത്തെ കാണാൻ നിങ്ങളെ അടുപ്പിക്കുന്നു.</string>
+    <string name="quote_2_4">നിങ്ങളുടെ കരുത്ത് നിങ്ങൾക്കുള്ളിലെ ജീവന് പ്രചോദനമാണ്.</string>
+    <string name="quote_3_1">നിങ്ങൾ ലക്ഷ്യത്തിനടുത്തെത്തി — കരുത്തോടെയിരിക്കുക.</string>
+    <string name="quote_3_2">നിങ്ങളുടെ ധൈര്യം ഒരു ഭാവി കെട്ടിപ്പടുക്കുകയാണ്.</string>
+    <string name="quote_3_3">അവസാന ഘട്ടം ഏറ്റവും വലിയ അനുഗ്രഹത്തിലേക്ക് നയിക്കുന്നു.</string>
+    <string name="quote_3_4">നിങ്ങളുടെ ഓരോ ശ്വാസവും മാതൃത്വത്തിനായി നിങ്ങളെ ഒരുക്കുന്നു.</string>
+    <string name="baby_dev_1">നിങ്ങളുടെ കുഞ്ഞിന്റെ പ്രധാന അവയവങ്ങൾ രൂപപ്പെടുന്നു. ഹൃദയമിടിപ്പ് ആരംഭിച്ചു, ചെറിയ കൈകളും കാലുകളും വളരുന്നു.</string>
+    <string name="baby_dev_2">നിങ്ങളുടെ കുഞ്ഞിന് ശബ്ദങ്ങൾ കേൾക്കാനും ചലനങ്ങളോട് പ്രതികരിക്കാനും കഴിയും. ഈ ഘട്ടത്തിൽ മസ്തിഷ്ക വികാസം വേഗത്തിലാണ്.</string>
+    <string name="baby_dev_3">നിങ്ങളുടെ കുഞ്ഞ് ഭാരം കൂടുകയും പ്രസവത്തിനായി തയ്യാറെടുക്കുകയും ചെയ്യുന്നു. ശ്വാസകോശങ്ങൾ പൂർണ്ണ വളർച്ചയെത്തുന്നു.</string>
+
+</resources>

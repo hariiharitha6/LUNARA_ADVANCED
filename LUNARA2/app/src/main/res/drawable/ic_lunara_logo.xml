@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+
+    <!-- Outer glow ring -->
+    <path
+        android:pathData="M40,40 m-36,0 a36,36 0 1,0 72,0 a36,36 0 1,0 -72,0"
+        android:strokeColor="#33C4B5FD"
+        android:strokeWidth="4"
+        android:fillColor="#00000000"/>
+
+    <!-- Moon body — crescent shape using subtracted circle trick -->
+    <path
+        android:pathData="M40,14 C27.3,14 17,24.3 17,37 C17,49.7 27.3,60 40,60
+                          C45.5,60 50.5,58.1 54.5,54.8 C48.5,53.8 44,48.5 44,42
+                          C44,35.4 48.7,30 54.8,29.2 C50.8,20.8 45.8,14 40,14 Z"
+        android:fillColor="#0F766E"/>
+
+    <!-- Star accent top-right -->
+    <path
+        android:pathData="M58,22 L59.2,25.8 L63,27 L59.2,28.2 L58,32 L56.8,28.2 L53,27 L56.8,25.8 Z"
+        android:fillColor="#C4B5FD"/>
+
+    <!-- Small dot accent -->
+    <path
+        android:pathData="M55,42 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0"
+        android:fillColor="#FB7185"/>
+
+</vector>

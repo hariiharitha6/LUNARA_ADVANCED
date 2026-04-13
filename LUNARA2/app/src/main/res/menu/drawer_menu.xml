@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/nav_health"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="Health Tracking" />
+        <item
+            android:id="@+id/nav_baby"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Baby Development" />
+        <item
+            android:id="@+id/nav_risk"
+            android:icon="@android:drawable/ic_dialog_alert"
+            android:title="Risk Score" />
+        <item
+            android:id="@+id/nav_scheduler"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="Smart Scheduler" />
+        <item
+            android:id="@+id/nav_reminders"
+            android:icon="@android:drawable/ic_popup_reminder"
+            android:title="Reminders" />
+        <item
+            android:id="@+id/nav_doctor"
+            android:icon="@android:drawable/ic_menu_call"
+            android:title="Doctor Contact" />
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@android:drawable/stat_notify_chat"
+            android:title="Chat Assistant" />
+    </group>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@android:drawable/ic_menu_preferences"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@android:drawable/ic_lock_power_off"
+                android:title="Logout" />
+        </menu>
+    </item>
+</menu>
