@@ -6,7 +6,7 @@ import android.widget.*;
 import android.content.Intent;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     DatePicker datePicker;
     Button calcBtn, checkRiskBtn, emergencyBtn;

@@ -47,22 +47,42 @@
                     android:text="Stay on top of your health"
                     android:textColor="@color/text_secondary"
                     android:textSize="14sp"
-                    android:layout_marginBottom="24dp" />
+                    android:layout_marginBottom="20dp" />
+
+                <!-- ═════════════════════════════════════════ -->
+                <!-- SECTION: Quick Reminders (existing)      -->
+                <!-- ═════════════════════════════════════════ -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quick_reminders"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tap_time_to_change"
+                    android:textColor="@color/text_hint"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="14dp" />
 
                 <!-- ══ Weekly Health Check Card ══ -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="4dp"
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="3dp"
                     app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="20dp">
+                        android:padding="18dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -76,7 +96,7 @@
                                 android:layout_weight="1"
                                 android:text="🩺 Weekly Health Check"
                                 android:textColor="@color/secondary"
-                                android:textSize="16sp"
+                                android:textSize="15sp"
                                 android:textStyle="bold" />
 
                             <Switch
@@ -88,15 +108,15 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
+                            android:layout_marginTop="4dp"
                             android:text="Weekly reminder for health monitoring"
                             android:textColor="@color/text_secondary"
-                            android:textSize="13sp" />
+                            android:textSize="12sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -105,18 +125,18 @@
                                 android:layout_height="wrap_content"
                                 android:text="⏰ Time: "
                                 android:textColor="@color/text_primary"
-                                android:textSize="14sp" />
+                                android:textSize="13sp" />
 
                             <TextView
                                 android:id="@+id/healthTimeText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/rounded_card"
-                                android:paddingHorizontal="16dp"
-                                android:paddingVertical="8dp"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="6dp"
                                 android:text="9:00 AM"
                                 android:textColor="@color/secondary"
-                                android:textSize="15sp"
+                                android:textSize="14sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
@@ -126,16 +146,16 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="4dp"
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="3dp"
                     app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="20dp">
+                        android:padding="18dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -149,7 +169,7 @@
                                 android:layout_weight="1"
                                 android:text="👩‍⚕ Doctor Visit"
                                 android:textColor="@color/secondary"
-                                android:textSize="16sp"
+                                android:textSize="15sp"
                                 android:textStyle="bold" />
 
                             <Switch
@@ -161,15 +181,15 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
+                            android:layout_marginTop="4dp"
                             android:text="Daily reminder for upcoming doctor visits"
                             android:textColor="@color/text_secondary"
-                            android:textSize="13sp" />
+                            android:textSize="12sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -178,18 +198,18 @@
                                 android:layout_height="wrap_content"
                                 android:text="⏰ Time: "
                                 android:textColor="@color/text_primary"
-                                android:textSize="14sp" />
+                                android:textSize="13sp" />
 
                             <TextView
                                 android:id="@+id/doctorTimeText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/rounded_card"
-                                android:paddingHorizontal="16dp"
-                                android:paddingVertical="8dp"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="6dp"
                                 android:text="10:00 AM"
                                 android:textColor="@color/secondary"
-                                android:textSize="15sp"
+                                android:textSize="14sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
@@ -200,15 +220,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="4dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="3dp"
                     app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="20dp">
+                        android:padding="18dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -222,7 +242,7 @@
                                 android:layout_weight="1"
                                 android:text="💊 Medication"
                                 android:textColor="@color/secondary"
-                                android:textSize="16sp"
+                                android:textSize="15sp"
                                 android:textStyle="bold" />
 
                             <Switch
@@ -234,15 +254,15 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
+                            android:layout_marginTop="4dp"
                             android:text="Daily reminder to take your prescribed medication"
                             android:textColor="@color/text_secondary"
-                            android:textSize="13sp" />
+                            android:textSize="12sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -251,22 +271,70 @@
                                 android:layout_height="wrap_content"
                                 android:text="⏰ Time: "
                                 android:textColor="@color/text_primary"
-                                android:textSize="14sp" />
+                                android:textSize="13sp" />
 
                             <TextView
                                 android:id="@+id/medTimeText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/rounded_card"
-                                android:paddingHorizontal="16dp"
-                                android:paddingVertical="8dp"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="6dp"
                                 android:text="8:00 AM"
                                 android:textColor="@color/secondary"
-                                android:textSize="15sp"
+                                android:textSize="14sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+                <!-- ═════════════════════════════════════════ -->
+                <!-- SECTION: Custom Reminders (new)          -->
+                <!-- ═════════════════════════════════════════ -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="8dp"
+                    android:background="@color/card_stroke" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/custom_reminders"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/addReminderBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/btn_teal_primary"
+                    android:text="@string/add_reminder"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_on_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:stateListAnimator="@null" />
+
+                <TextView
+                    android:id="@+id/noCustomRemindersText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="@string/no_custom_reminders"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/customReminderRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
 
             </LinearLayout>
         </ScrollView>

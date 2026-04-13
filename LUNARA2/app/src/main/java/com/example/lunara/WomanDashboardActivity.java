@@ -41,12 +41,15 @@ public class WomanDashboardActivity extends BaseDrawerActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_woman_dashboard);
 
-        // ── Status Bar Fix (WindowInsets) ──
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_content), (v, insets) -> {
-            int top = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top;
-            v.setPadding(0, top, 0, 0);
-            return insets;
-        });
+        // ── Status Bar Fix ──
+        View mainView = findViewById(R.id.main_content);
+        if (mainView != null) {
+            ViewCompat.setOnApplyWindowInsetsListener(mainView, (v, insets) -> {
+                int top = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top;
+                v.setPadding(0, top, 0, 0);
+                return insets;
+            });
+        }
 
         // ── BaseDrawer Setup ──
         setupDrawer();
@@ -75,29 +78,22 @@ public class WomanDashboardActivity extends BaseDrawerActivity {
         currentUserId = getSharedPreferences("UserData", MODE_PRIVATE)
                 .getString("current_user_id", null);
 
+        // Fixed: Remove infinite redirect logic, just load if ID exists
         if (currentUserId != null) {
             loadUserDataFromFirebase();
-        } else {
-            Toast.makeText(this, "Session expired.", Toast.LENGTH_SHORT).show();
-            navigateToLogin();
         }
 
         // ── Dashboard Buttons ──
-        healthBtn.setOnClickListener(v -> startActivity(new Intent(this, HealthTrackingActivity.class)));
-        babyBtn.setOnClickListener(v -> startActivity(new Intent(this, BabyDevelopmentActivity.class)));
-        emergencyBtn.setOnClickListener(v -> startActivity(new Intent(this, EmergencyActivity.class)));
-        riskBtn.setOnClickListener(v -> startActivity(new Intent(this, RiskAlertActivity.class)));
-        alertBtn.setOnClickListener(v -> sendEmergencyAlert());
-    }
-
-    private void navigateToLogin() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
+        if (healthBtn != null) healthBtn.setOnClickListener(v -> startActivity(new Intent(WomanDashboardActivity.this, HealthTrackingActivity.class)));
+        if (babyBtn != null) babyBtn.setOnClickListener(v -> startActivity(new Intent(WomanDashboardActivity.this, BabyDevelopmentActivity.class)));
+        if (emergencyBtn != null) emergencyBtn.setOnClickListener(v -> startActivity(new Intent(WomanDashboardActivity.this, EmergencyActivity.class)));
+        if (riskBtn != null) riskBtn.setOnClickListener(v -> startActivity(new Intent(WomanDashboardActivity.this, RiskAlertActivity.class)));
+        if (alertBtn != null) alertBtn.setOnClickListener(v -> sendEmergencyAlert());
     }
 
     private void loadUserDataFromFirebase() {
+        if (currentUserId == null) return;
+        
         FirebaseDatabase.getInstance().getReference("users")
                 .child(currentUserId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -114,10 +110,10 @@ public class WomanDashboardActivity extends BaseDrawerActivity {
     }
 
     private void populateUI(UserModel user) {
-        nameText.setText(getString(R.string.name_prefix) + " " + user.name);
-        areaText.setText(getString(R.string.area_prefix) + " " + user.area);
-        mobileText.setText(getString(R.string.mobile_prefix) + " " + user.mobile);
-        weightText.setText(getString(R.string.weight_prefix) + " " + user.weight + " kg");
+        if (nameText != null) nameText.setText(getString(R.string.name_prefix) + " " + user.name);
+        if (areaText != null) areaText.setText(getString(R.string.area_prefix) + " " + user.area);
+        if (mobileText != null) mobileText.setText(getString(R.string.mobile_prefix) + " " + user.mobile);
+        if (weightText != null) weightText.setText(getString(R.string.weight_prefix) + " " + user.weight + " kg");
 
         Calendar lmp = Calendar.getInstance();
         lmp.set(user.lmpYear, user.lmpMonth, user.lmpDay);
@@ -126,30 +122,36 @@ public class WomanDashboardActivity extends BaseDrawerActivity {
         long diff  = today.getTimeInMillis() - lmp.getTimeInMillis();
         long weeks = (diff / (1000 * 60 * 60 * 24)) / 7;
 
-        weekText.setText(getString(R.string.week_prefix) + " " + weeks);
+        if (weekText != null) weekText.setText(getString(R.string.week_prefix) + " " + weeks);
 
-        if (weeks <= 12) {
-            trimesterText.setText(getString(R.string.trimester_1));
-            tipsText.setText(getString(R.string.tips_1));
-        } else if (weeks <= 27) {
-            trimesterText.setText(getString(R.string.trimester_2));
-            tipsText.setText(getString(R.string.tips_2));
-        } else {
-            trimesterText.setText(getString(R.string.trimester_3));
-            tipsText.setText(getString(R.string.tips_3));
+        if (trimesterText != null && tipsText != null) {
+            if (weeks <= 12) {
+                trimesterText.setText(getString(R.string.trimester_1));
+                tipsText.setText(getString(R.string.tips_1));
+            } else if (weeks <= 27) {
+                trimesterText.setText(getString(R.string.trimester_2));
+                tipsText.setText(getString(R.string.tips_2));
+            } else {
+                trimesterText.setText(getString(R.string.trimester_3));
+                tipsText.setText(getString(R.string.tips_3));
+            }
         }
 
         Calendar edd = (Calendar) lmp.clone();
         edd.add(Calendar.DAY_OF_YEAR, 280);
-        dueDateText.setText(getString(R.string.due_date_prefix) + " "
-                + edd.get(Calendar.DAY_OF_MONTH) + "/"
-                + (edd.get(Calendar.MONTH) + 1) + "/"
-                + edd.get(Calendar.YEAR));
+        if (dueDateText != null) {
+            dueDateText.setText(getString(R.string.due_date_prefix) + " "
+                    + edd.get(Calendar.DAY_OF_MONTH) + "/"
+                    + (edd.get(Calendar.MONTH) + 1) + "/"
+                    + edd.get(Calendar.YEAR));
+        }
 
         scheduleAndDisplayCheckup(user.riskScore, weeks);
     }
 
     private void scheduleAndDisplayCheckup(int riskScore, long weeks) {
+        if (currentUserId == null) return;
+        
         DatabaseReference checkupRef = FirebaseDatabase.getInstance()
                 .getReference("checkups").child(currentUserId);
 
@@ -175,26 +177,62 @@ public class WomanDashboardActivity extends BaseDrawerActivity {
     }
 
     private void displayCheckupCard(CheckupModel checkup) {
+        if (nextVisitCard == null) return;
+        
         nextVisitCard.setVisibility(View.VISIBLE);
         Animation fadeIn = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
         nextVisitCard.startAnimation(fadeIn);
 
         long daysLeft = CheckupScheduler.daysUntilVisit(checkup.nextVisitDate);
-        nextVisitDateText.setText("📅 " + CheckupScheduler.formatDate(checkup.nextVisitDate));
+        if (nextVisitDateText != null) nextVisitDateText.setText("📅 " + CheckupScheduler.formatDate(checkup.nextVisitDate));
 
         if (daysLeft < 0) {
-            nextVisitCountdown.setText(getString(R.string.visit_overdue, Math.abs(daysLeft)));
-            nextVisitStatus.setText(getString(R.string.overdue_caps));
-            nextVisitStatus.setTextColor(ContextCompat.getColor(this, R.color.danger));
+            if (nextVisitCountdown != null) nextVisitCountdown.setText(getString(R.string.visit_overdue, Math.abs(daysLeft)));
+            if (nextVisitStatus != null) {
+                nextVisitStatus.setText(getString(R.string.overdue_caps));
+                nextVisitStatus.setTextColor(ContextCompat.getColor(this, R.color.danger));
+            }
         } else {
-            nextVisitCountdown.setText(getString(R.string.days_remaining, daysLeft));
+            if (nextVisitCountdown != null) nextVisitCountdown.setText(getString(R.string.days_remaining, daysLeft));
             boolean isHighRisk = CheckupScheduler.LEVEL_HIGH.equals(checkup.riskLevel);
-            nextVisitStatus.setText(isHighRisk ? getString(R.string.high_risk_badge) : getString(R.string.low_risk_badge));
-            nextVisitStatus.setTextColor(isHighRisk ? ContextCompat.getColor(this, R.color.danger) : ContextCompat.getColor(this, R.color.success));
+            if (nextVisitStatus != null) {
+                nextVisitStatus.setText(isHighRisk ? getString(R.string.high_risk_badge) : getString(R.string.low_risk_badge));
+                nextVisitStatus.setTextColor(isHighRisk ? ContextCompat.getColor(this, R.color.danger) : ContextCompat.getColor(this, R.color.success));
+            }
         }
     }
 
     private void sendEmergencyAlert() {
-        // Implementation remains unchanged
+        if (currentUserId == null) return;
+
+        FirebaseDatabase.getInstance().getReference("users")
+                .child(currentUserId)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+                        UserModel user = snapshot.getValue(UserModel.class);
+                        if (user != null) {
+                            AlertModel alert = new AlertModel(
+                                    user.name,
+                                    user.mobile,
+                                    user.area,
+                                    System.currentTimeMillis()
+                            );
+
+                            FirebaseDatabase.getInstance().getReference("alerts")
+                                    .child(currentUserId)
+                                    .setValue(alert)
+                                    .addOnSuccessListener(unused -> 
+                                        Toast.makeText(WomanDashboardActivity.this, 
+                                            "Emergency Alert Sent!", Toast.LENGTH_SHORT).show())
+                                    .addOnFailureListener(e -> 
+                                        Toast.makeText(WomanDashboardActivity.this, 
+                                            "Failed to send alert: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {}
+                });
     }
 }

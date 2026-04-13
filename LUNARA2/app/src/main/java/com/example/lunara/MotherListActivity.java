@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class MotherListActivity extends AppCompatActivity {
+public class MotherListActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

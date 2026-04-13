@@ -8,7 +8,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.widget.Toast;
 
-public class RoleSelectionActivity extends AppCompatActivity {
+public class RoleSelectionActivity extends BaseActivity {
 
     Button womanBtn, adminBtn;
 
@@ -60,10 +60,10 @@ public class RoleSelectionActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(RoleSelectionActivity.this,
                         AdminDashboardActivity.class);
-
+                // Clear the backstack so Back does not return to RoleSelectionActivity
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-
-                // 🚫 DO NOT use finish() here
+                finish();
 
             } else {
 

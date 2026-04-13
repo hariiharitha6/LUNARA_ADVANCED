@@ -17,10 +17,7 @@
             android:id="@+id/nav_risk"
             android:icon="@android:drawable/ic_dialog_alert"
             android:title="Risk Score" />
-        <item
-            android:id="@+id/nav_scheduler"
-            android:icon="@android:drawable/ic_menu_my_calendar"
-            android:title="Smart Scheduler" />
+
         <item
             android:id="@+id/nav_reminders"
             android:icon="@android:drawable/ic_popup_reminder"

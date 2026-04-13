@@ -19,16 +19,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public abstract class BaseDrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public abstract class BaseDrawerActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     protected DrawerLayout drawerLayout;
     protected NavigationView navigationView;
     protected Toolbar toolbar;
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.onAttach(newBase));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +32,25 @@ public abstract class BaseDrawerActivity extends AppCompatActivity implements Na
 
     protected void setupDrawer() {
         toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("");
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setTitle("");
+            }
         }
 
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigationView);
-        navigationView.setNavigationItemSelectedListener(this);
+        if (navigationView != null) {
+            navigationView.setNavigationItemSelectedListener(this);
+        }
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        if (drawerLayout != null && toolbar != null) {
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                    R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawerLayout.addDrawerListener(toggle);
+            toggle.syncState();
+        }
     }
 
     @Override
@@ -57,15 +58,17 @@ public abstract class BaseDrawerActivity extends AppCompatActivity implements Na
         int id = item.getItemId();
 
         if (id == R.id.nav_dashboard) {
-            startActivity(new Intent(this, WomanDashboardActivity.class));
+            if (!(this instanceof WomanDashboardActivity)) {
+                Intent intent = new Intent(this, WomanDashboardActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
         } else if (id == R.id.nav_health) {
             startActivity(new Intent(this, HealthTrackingActivity.class));
         } else if (id == R.id.nav_baby) {
             startActivity(new Intent(this, BabyDevelopmentActivity.class));
         } else if (id == R.id.nav_risk) {
             startActivity(new Intent(this, RiskAlertActivity.class));
-        } else if (id == R.id.nav_scheduler) {
-            startActivity(new Intent(this, SmartSchedulerActivity.class));
         } else if (id == R.id.nav_reminders) {
             startActivity(new Intent(this, ReminderActivity.class));
         } else if (id == R.id.nav_doctor) {
@@ -78,7 +81,9 @@ public abstract class BaseDrawerActivity extends AppCompatActivity implements Na
             showCustomLogoutDialog();
         }
 
-        drawerLayout.closeDrawer(GravityCompat.START);
+        if (drawerLayout != null) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
         return true;
     }
 
@@ -98,16 +103,20 @@ public abstract class BaseDrawerActivity extends AppCompatActivity implements Na
         Button btnPos = dialogView.findViewById(R.id.btnPositive);
         Button btnNeg = dialogView.findViewById(R.id.btnNegative);
 
-        icon.setText("🚪");
-        title.setText(getString(R.string.logout));
-        message.setText(getString(R.string.logout_message));
+        if (icon != null) icon.setText("🚪");
+        if (title != null) title.setText(getString(R.string.logout));
+        if (message != null) message.setText(getString(R.string.logout_message));
 
-        btnPos.setOnClickListener(v -> {
-            dialog.dismiss();
-            performLogout();
-        });
+        if (btnPos != null) {
+            btnPos.setOnClickListener(v -> {
+                dialog.dismiss();
+                performLogout();
+            });
+        }
 
-        btnNeg.setOnClickListener(v -> dialog.dismiss());
+        if (btnNeg != null) {
+            btnNeg.setOnClickListener(v -> dialog.dismiss());
+        }
 
         dialog.show();
     }
@@ -115,7 +124,6 @@ public abstract class BaseDrawerActivity extends AppCompatActivity implements Na
     private void performLogout() {
         getSharedPreferences("UserData", MODE_PRIVATE).edit()
                 .remove("current_user_id")
-                .remove("currentUserId")
                 .remove("isLoggedIn")
                 .apply();
         Intent intent = new Intent(this, LoginActivity.class);

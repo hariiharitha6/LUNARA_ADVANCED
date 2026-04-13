@@ -209,4 +209,46 @@
     <string name="baby_dev_2">നിങ്ങളുടെ കുഞ്ഞിന് ശബ്ദങ്ങൾ കേൾക്കാനും ചലനങ്ങളോട് പ്രതികരിക്കാനും കഴിയും. ഈ ഘട്ടത്തിൽ മസ്തിഷ്ക വികാസം വേഗത്തിലാണ്.</string>
     <string name="baby_dev_3">നിങ്ങളുടെ കുഞ്ഞ് ഭാരം കൂടുകയും പ്രസവത്തിനായി തയ്യാറെടുക്കുകയും ചെയ്യുന്നു. ശ്വാസകോശങ്ങൾ പൂർണ്ണ വളർച്ചയെത്തുന്നു.</string>
 
+    <!-- Appointments (Smart Scheduler) -->
+    <string name="your_appointments">നിങ്ങളുടെ അപ്പോയിന്റ്മെന്റുകൾ</string>
+    <string name="add_appointment">➕ അപ്പോയിന്റ്മെന്റ് ചേർക്കുക</string>
+    <string name="appointment_title">അപ്പോയിന്റ്മെന്റ് ശീർഷകം</string>
+    <string name="appointment_desc">വിവരണം (ഓപ്ഷണൽ)</string>
+    <string name="select_date">തീയതി തിരഞ്ഞെടുക്കുക</string>
+    <string name="select_time">സമയം തിരഞ്ഞെടുക്കുക</string>
+    <string name="save">സേവ് ചെയ്യുക</string>
+    <string name="no_appointments">ഇതുവരെ അപ്പോയിന്റ്മെന്റുകൾ ഷെഡ്യൂൾ ചെയ്തിട്ടില്ല.</string>
+    <string name="appointment_saved">അപ്പോയിന്റ്മെന്റ് സേവ് ചെയ്തു!</string>
+    <string name="please_select_date_time">ദയവായി ആദ്യം തീയതിയും സമയവും തിരഞ്ഞെടുക്കുക.</string>
+    <string name="delete">ഇല്ലാതാക്കുക</string>
+    <string name="appointment_deleted">അപ്പോയിന്റ്മെന്റ് ഇല്ലാതാക്കി.</string>
+
+    <!-- Doctor Contact (Multi) -->
+    <string name="your_doctors">നിങ്ങളുടെ ഡോക്ടർമാർ</string>
+    <string name="add_doctor">➕ ഡോക്ടറെ ചേർക്കുക</string>
+    <string name="no_doctors_saved">ഡോക്ടർ കോൺടാക്റ്റുകൾ സേവ് ചെയ്തിട്ടില്ല.</string>
+    <string name="doctor_saved">ഡോക്ടർ കോൺടാക്റ്റ് സേവ് ചെയ്തു!</string>
+    <string name="doctor_deleted">ഡോക്ടർ കോൺടാക്റ്റ് ഇല്ലാതാക്കി.</string>
+    <string name="doctor_name_hint">ഡോക്ടറുടെ പേര്</string>
+    <string name="doctor_phone_hint">ഫോൺ നമ്പർ</string>
+
+    <!-- Chat Quick Topics -->
+    <string name="quick_topics">പ്രധാന വിഷയങ്ങൾ</string>
+    <string name="privacy_notice">🔒 നിങ്ങളുടെ ചാറ്റുകൾ ഈ ഉപകരണത്തിൽ മാത്രമേ ഉള്ളൂ. വിവരങ്ങൾ പങ്കിടുന്നില്ല.</string>
+
+    <!-- Reminder Enhancement -->
+    <string name="custom_reminders">ഇഷ്ടാനുസൃത ഓർമ്മപ്പെടുത്തലുകൾ</string>
+    <string name="add_reminder">➕ ഓർമ്മപ്പെടുത്തൽ ചേർക്കുക</string>
+    <string name="no_custom_reminders">ഇഷ്ടാനുസൃത ഓർമ്മപ്പെടുത്തലുകൾ ഇല്ല.\nമുകളിലെ ബട്ടൺ ടാപ്പ് ചെയ്ത് ഒന്ന് ചേർക്കുക.</string>
+    <string name="reminder_title_hint">ഓർമ്മപ്പെടുത്തൽ ശീർഷകം</string>
+    <string name="reminder_saved">ഓർമ്മപ്പെടുത്തൽ സേവ് ചെയ്തു, അലാറം സെറ്റ് ചെയ്തു!</string>
+    <string name="reminder_deleted">ഓർമ്മപ്പെടുത്തൽ ഇല്ലാതാക്കി.</string>
+    <string name="alert_type">അലേർട്ട് തരം</string>
+    <string name="alarm_sound">🔔 അലാറം + ശബ്ദം</string>
+    <string name="silent_notification">🔕 അറിയിപ്പ് മാത്രം</string>
+    <string name="quick_reminders">ദ്രുത ഓർമ്മപ്പെടുത്തലുകൾ</string>
+    <string name="tap_time_to_change">സമയം മാറ്റാൻ ടാപ്പ് ചെയ്യുക</string>
+
 </resources>
+
+

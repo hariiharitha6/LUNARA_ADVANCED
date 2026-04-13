@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.content.Intent;
 
-public class RegionDashboardActivity extends AppCompatActivity {
+public class RegionDashboardActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

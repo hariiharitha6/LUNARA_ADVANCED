@@ -67,7 +67,11 @@ public class SettingsActivity extends BaseDrawerActivity {
                 
                 if (!selectedLang.equals(currentLang)) {
                     LocaleHelper.setLocale(SettingsActivity.this, selectedLang);
-                    recreate();
+                    // Restart entire task so all activities get the new locale
+                    Intent restart = new Intent(SettingsActivity.this, WomanDashboardActivity.class);
+                    restart.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(restart);
+                    finish();
                 }
             }
             @Override
@@ -111,7 +115,7 @@ public class SettingsActivity extends BaseDrawerActivity {
                 .setPositiveButton(getString(R.string.yes), (d, w) -> {
                     getSharedPreferences("UserData", MODE_PRIVATE)
                             .edit()
-                            .remove("currentUserId")
+                            .remove("current_user_id")   // matches key written by LoginActivity
                             .remove("isLoggedIn")
                             .apply();
 

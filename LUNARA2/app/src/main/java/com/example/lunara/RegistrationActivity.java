@@ -10,7 +10,7 @@ import android.content.SharedPreferences;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegistrationActivity extends AppCompatActivity {
+public class RegistrationActivity extends BaseActivity {
 
     EditText name, area, mobile, weight, password;
     DatePicker datePicker;

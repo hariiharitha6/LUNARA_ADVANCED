@@ -1,6 +1,5 @@
 package com.example.lunara;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.widget.*;
@@ -12,7 +11,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     EditText mobileInput, passwordInput;
     Button loginBtn;
@@ -28,18 +27,22 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn      = findViewById(R.id.loginBtn);
         signupText    = findViewById(R.id.signupText);
 
-        loginBtn.setOnClickListener(v -> {
-            String mob  = mobileInput.getText().toString().trim();
-            String pass = passwordInput.getText().toString().trim();
-            if (mob.isEmpty() || pass.isEmpty()) {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            validateLoginFirebase(mob, pass);
-        });
+        if (loginBtn != null) {
+            loginBtn.setOnClickListener(v -> {
+                String mob = mobileInput.getText().toString().trim();
+                String pass = passwordInput.getText().toString().trim();
+                if (mob.isEmpty() || pass.isEmpty()) {
+                    Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                validateLoginFirebase(mob, pass);
+            });
+        }
 
-        signupText.setOnClickListener(v ->
-                startActivity(new Intent(this, RegistrationActivity.class)));
+        if (signupText != null) {
+            signupText.setOnClickListener(v ->
+                    startActivity(new Intent(this, RegistrationActivity.class)));
+        }
     }
 
     private void validateLoginFirebase(String inputMobile, String inputPassword) {
@@ -63,14 +66,16 @@ public class LoginActivity extends AppCompatActivity {
                             if (inputMobile.equals(user.mobile) &&
                                     inputPassword.equals(user.password)) {
 
-                                // Save session
                                 SharedPreferences.Editor editor =
                                         getSharedPreferences("UserData", MODE_PRIVATE).edit();
                                 editor.putString("current_user_id", child.getKey());
+                                editor.putBoolean("isLoggedIn", true);
                                 editor.apply();
 
-                                startActivity(new Intent(LoginActivity.this,
-                                        WomanDashboardActivity.class));
+                                Intent intent = new Intent(LoginActivity.this,
+                                        WomanDashboardActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
                                 finish();
                                 return;
                             }

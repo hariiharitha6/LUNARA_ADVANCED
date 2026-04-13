@@ -1,9 +1,14 @@
 package com.example.lunara;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,6 +25,7 @@ public class ChatAssistantActivity extends BaseDrawerActivity {
     ChatAdapter adapter;
     List<ChatMessage> messages;
     Map<String, String> faqMap;
+    LinearLayout quickTopicsContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +34,10 @@ public class ChatAssistantActivity extends BaseDrawerActivity {
 
         setupDrawer();
 
-        chatRecyclerView = findViewById(R.id.chatRecyclerView);
-        chatInput        = findViewById(R.id.chatInput);
-        sendBtn          = findViewById(R.id.sendBtn);
+        chatRecyclerView    = findViewById(R.id.chatRecyclerView);
+        chatInput           = findViewById(R.id.chatInput);
+        sendBtn             = findViewById(R.id.sendBtn);
+        quickTopicsContainer = findViewById(R.id.quickTopicsContainer);
 
         messages = new ArrayList<>();
         adapter  = new ChatAdapter(messages);
@@ -38,8 +45,10 @@ public class ChatAssistantActivity extends BaseDrawerActivity {
         chatRecyclerView.setAdapter(adapter);
 
         buildFAQ();
+        buildQuickTopics();
 
         addBotMessage(getString(R.string.chat_welcome));
+        addBotMessage(getString(R.string.privacy_notice));
 
         sendBtn.setOnClickListener(v -> {
             String userText = chatInput.getText().toString().trim();
@@ -51,6 +60,52 @@ public class ChatAssistantActivity extends BaseDrawerActivity {
             String response = findResponse(userText.toLowerCase());
             addBotMessage(response);
         });
+    }
+
+    private void buildQuickTopics() {
+        String[][] topics = {
+                {"🍎 Diet",     "diet"},
+                {"🏃 Exercise", "exercise"},
+                {"👶 Baby",     "baby"},
+                {"😴 Sleep",    "sleep"},
+                {"💊 Medicine", "medicine"},
+                {"🩸 BP",       "bp"},
+                {"⚠ Warning",  "warning"},
+                {"🤱 Labor",    "labor"},
+                {"📅 Checkup",  "checkup"},
+                {"🍬 Sugar",    "sugar"},
+                {"⚖ Weight",   "weight"},
+                {"💉 Vaccine",  "vaccine"},
+        };
+
+        for (String[] topic : topics) {
+            TextView pill = new TextView(this);
+            pill.setText(topic[0]);
+            pill.setTextSize(13);
+            pill.setTextColor(ContextCompat.getColor(this, R.color.secondary));
+            pill.setBackgroundResource(R.drawable.rounded_card);
+            pill.setPadding(dpToPx(14), dpToPx(8), dpToPx(14), dpToPx(8));
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            params.setMargins(dpToPx(4), 0, dpToPx(4), 0);
+            pill.setLayoutParams(params);
+
+            pill.setOnClickListener(v -> {
+                addUserMessage(topic[0]);
+                String response = findResponse(topic[1]);
+                addBotMessage(response);
+            });
+
+            quickTopicsContainer.addView(pill);
+        }
+    }
+
+    private int dpToPx(int dp) {
+        return (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, dp,
+                getResources().getDisplayMetrics());
     }
 
     private void addUserMessage(String text) {

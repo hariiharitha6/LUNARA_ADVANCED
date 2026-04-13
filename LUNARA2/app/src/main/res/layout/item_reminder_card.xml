@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Row 1: Title + Toggle -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/reminderItemTitle"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Switch
+                android:id="@+id/reminderItemSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Row 2: Date + Time -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/reminderItemDate"
+                android:textSize="13sp"
+                android:textColor="@color/secondary"
+                android:drawablePadding="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/reminderItemTime"
+                android:textSize="13sp"
+                android:textColor="@color/secondary"
+                android:drawablePadding="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Row 3: Alert Type badge + Delete -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/reminderItemType"
+                android:textSize="12sp"
+                android:textColor="@color/text_on_primary"
+                android:background="@drawable/rounded_card"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/reminderItemDeleteBtn"
+                android:text="@string/delete"
+                android:textAllCaps="false"
+                android:background="@drawable/btn_danger_state"
+                android:textColor="@color/text_on_primary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:stateListAnimator="@null"
+                android:paddingHorizontal="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

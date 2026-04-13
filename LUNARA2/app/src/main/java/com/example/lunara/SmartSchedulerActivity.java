@@ -1,17 +1,27 @@
 package com.example.lunara;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
 import com.google.firebase.database.*;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -24,6 +34,11 @@ public class SmartSchedulerActivity extends BaseDrawerActivity {
     TextView riskAdviceText, laborReminderText;
     LinearLayout overdueCard;
     Button markVisitBtn;
+
+    // Appointment views
+    Button addAppointmentBtn;
+    TextView noAppointmentsText;
+    LinearLayout appointmentListContainer;
 
     SharedPreferences prefs;
     String userId;
@@ -50,12 +65,18 @@ public class SmartSchedulerActivity extends BaseDrawerActivity {
         riskAdviceText  = findViewById(R.id.riskAdviceText);
         laborReminderText = findViewById(R.id.laborReminderText);
 
+        // Appointment views
+        addAppointmentBtn       = findViewById(R.id.addAppointmentBtn);
+        noAppointmentsText      = findViewById(R.id.noAppointmentsText);
+        appointmentListContainer = findViewById(R.id.appointmentListContainer);
+
         if (userId.isEmpty()) {
             weekText.setText(getString(R.string.no_data_found));
             return;
         }
 
         loadLmpFromFirebase();
+        loadAppointments();
 
         markVisitBtn.setOnClickListener(v -> {
             long now = System.currentTimeMillis();
@@ -63,7 +84,217 @@ public class SmartSchedulerActivity extends BaseDrawerActivity {
             Toast.makeText(this, getString(R.string.visit_marked), Toast.LENGTH_SHORT).show();
             recalculateUI();
         });
+
+        addAppointmentBtn.setOnClickListener(v -> showAddAppointmentDialog());
     }
+
+    // ────────────────── Appointment CRUD ──────────────────
+
+    private void showAddAppointmentDialog() {
+        View dialogView = LayoutInflater.from(this).inflate(android.R.layout.simple_list_item_1, null);
+
+        // Build custom dialog layout programmatically
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setPadding(50, 30, 50, 10);
+
+        EditText titleInput = new EditText(this);
+        titleInput.setHint(getString(R.string.appointment_title));
+        layout.addView(titleInput);
+
+        EditText descInput = new EditText(this);
+        descInput.setHint(getString(R.string.appointment_desc));
+        layout.addView(descInput);
+
+        // Date/Time state
+        final Calendar selectedCal = Calendar.getInstance();
+        final boolean[] dateSet = {false};
+        final boolean[] timeSet = {false};
+
+        TextView dateDisplay = new TextView(this);
+        dateDisplay.setPadding(0, 20, 0, 10);
+        dateDisplay.setText(getString(R.string.select_date));
+        dateDisplay.setTextColor(ContextCompat.getColor(this, R.color.secondary));
+        dateDisplay.setTextSize(15);
+        layout.addView(dateDisplay);
+
+        dateDisplay.setOnClickListener(dv -> {
+            Calendar now = Calendar.getInstance();
+            new DatePickerDialog(this, (view, year, month, day) -> {
+                selectedCal.set(Calendar.YEAR, year);
+                selectedCal.set(Calendar.MONTH, month);
+                selectedCal.set(Calendar.DAY_OF_MONTH, day);
+                dateSet[0] = true;
+                SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy", Locale.getDefault());
+                dateDisplay.setText("📅 " + sdf.format(selectedCal.getTime()));
+            }, now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH)).show();
+        });
+
+        TextView timeDisplay = new TextView(this);
+        timeDisplay.setPadding(0, 10, 0, 20);
+        timeDisplay.setText(getString(R.string.select_time));
+        timeDisplay.setTextColor(ContextCompat.getColor(this, R.color.secondary));
+        timeDisplay.setTextSize(15);
+        layout.addView(timeDisplay);
+
+        timeDisplay.setOnClickListener(tv -> {
+            Calendar now = Calendar.getInstance();
+            new TimePickerDialog(this, (view, hour, minute) -> {
+                selectedCal.set(Calendar.HOUR_OF_DAY, hour);
+                selectedCal.set(Calendar.MINUTE, minute);
+                timeSet[0] = true;
+                String amPm = hour >= 12 ? "PM" : "AM";
+                int h12 = hour % 12;
+                if (h12 == 0) h12 = 12;
+                timeDisplay.setText(String.format(Locale.getDefault(),
+                        "⏰ %d:%02d %s", h12, minute, amPm));
+            }, now.get(Calendar.HOUR_OF_DAY), now.get(Calendar.MINUTE), false).show();
+        });
+
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.add_appointment))
+                .setView(layout)
+                .setPositiveButton(getString(R.string.save), (d, w) -> {
+                    String title = titleInput.getText().toString().trim();
+                    if (title.isEmpty()) {
+                        Toast.makeText(this, getString(R.string.appointment_title), Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (!dateSet[0] || !timeSet[0]) {
+                        Toast.makeText(this, getString(R.string.please_select_date_time), Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    String desc = descInput.getText().toString().trim();
+                    saveAppointment(title, desc, selectedCal.getTimeInMillis());
+                })
+                .setNegativeButton(getString(R.string.cancel), null)
+                .show();
+    }
+
+    private void saveAppointment(String title, String desc, long timeMs) {
+        try {
+            JSONArray arr = loadAppointmentArray();
+            JSONObject obj = new JSONObject();
+            obj.put("title", title);
+            obj.put("desc", desc);
+            obj.put("time", timeMs);
+            arr.put(obj);
+
+            prefs.edit().putString("appointments_json", arr.toString()).apply();
+            Toast.makeText(this, getString(R.string.appointment_saved), Toast.LENGTH_SHORT).show();
+            loadAppointments();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void deleteAppointment(int index) {
+        try {
+            JSONArray arr = loadAppointmentArray();
+            JSONArray newArr = new JSONArray();
+            for (int i = 0; i < arr.length(); i++) {
+                if (i != index) newArr.put(arr.get(i));
+            }
+            prefs.edit().putString("appointments_json", newArr.toString()).apply();
+            Toast.makeText(this, getString(R.string.appointment_deleted), Toast.LENGTH_SHORT).show();
+            loadAppointments();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private JSONArray loadAppointmentArray() {
+        String json = prefs.getString("appointments_json", "[]");
+        try {
+            return new JSONArray(json);
+        } catch (JSONException e) {
+            return new JSONArray();
+        }
+    }
+
+    private void loadAppointments() {
+        appointmentListContainer.removeAllViews();
+        JSONArray arr = loadAppointmentArray();
+
+        if (arr.length() == 0) {
+            noAppointmentsText.setVisibility(View.VISIBLE);
+            return;
+        }
+
+        noAppointmentsText.setVisibility(View.GONE);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy  •  h:mm a", Locale.getDefault());
+
+        for (int i = 0; i < arr.length(); i++) {
+            try {
+                JSONObject obj = arr.getJSONObject(i);
+                String title = obj.getString("title");
+                String desc = obj.optString("desc", "");
+                long time = obj.getLong("time");
+
+                // Build card dynamically
+                CardView card = new CardView(this);
+                LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                cardParams.bottomMargin = 12;
+                card.setLayoutParams(cardParams);
+                card.setRadius(40);
+                card.setCardElevation(8);
+                card.setCardBackgroundColor(ContextCompat.getColor(this, R.color.white));
+
+                LinearLayout inner = new LinearLayout(this);
+                inner.setOrientation(LinearLayout.VERTICAL);
+                inner.setPadding(48, 36, 48, 36);
+
+                TextView titleTv = new TextView(this);
+                titleTv.setText(title);
+                titleTv.setTextSize(16);
+                titleTv.setTextColor(ContextCompat.getColor(this, R.color.text_primary));
+                titleTv.setTypeface(null, android.graphics.Typeface.BOLD);
+                inner.addView(titleTv);
+
+                TextView timeTv = new TextView(this);
+                timeTv.setText("📅 " + sdf.format(new java.util.Date(time)));
+                timeTv.setTextSize(13);
+                timeTv.setTextColor(ContextCompat.getColor(this, R.color.secondary));
+                timeTv.setPadding(0, 8, 0, 0);
+                inner.addView(timeTv);
+
+                if (!desc.isEmpty()) {
+                    TextView descTv = new TextView(this);
+                    descTv.setText(desc);
+                    descTv.setTextSize(13);
+                    descTv.setTextColor(ContextCompat.getColor(this, R.color.text_secondary));
+                    descTv.setPadding(0, 8, 0, 0);
+                    inner.addView(descTv);
+                }
+
+                // Delete button
+                final int idx = i;
+                Button deleteBtn = new Button(this);
+                deleteBtn.setText(getString(R.string.delete));
+                deleteBtn.setTextSize(12);
+                deleteBtn.setAllCaps(false);
+                deleteBtn.setBackgroundResource(R.drawable.btn_danger_state);
+                deleteBtn.setTextColor(ContextCompat.getColor(this, R.color.text_on_primary));
+                LinearLayout.LayoutParams btnParams = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT, 96);
+                btnParams.topMargin = 24;
+                deleteBtn.setLayoutParams(btnParams);
+                deleteBtn.setOnClickListener(v -> deleteAppointment(idx));
+                inner.addView(deleteBtn);
+
+                card.addView(inner);
+                appointmentListContainer.addView(card);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    // ────────────────── Existing Pregnancy Logic (unchanged) ──────────────────
 
     private void loadLmpFromFirebase() {
         DatabaseReference userRef = FirebaseDatabase.getInstance()

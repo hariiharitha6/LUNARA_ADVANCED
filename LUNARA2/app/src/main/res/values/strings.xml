@@ -210,4 +210,45 @@
     <string name="risk_advice_high">⚠ High risk score detected (%d). Weekly visits strongly recommended regardless of trimester.</string>
     <string name="risk_advice_moderate">ℹ Moderate risk score (%d). Follow the recommended schedule closely.</string>
     <string name="labor_reminder_msg">🤱 Labor Preparation Reminder\nPack your hospital bag, review your birth plan, and keep emergency contacts ready.</string>
+
+    <!-- Appointments (Smart Scheduler) -->
+    <string name="your_appointments">Your Appointments</string>
+    <string name="add_appointment">➕ Add Appointment</string>
+    <string name="appointment_title">Appointment Title</string>
+    <string name="appointment_desc">Description (optional)</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
+    <string name="save">Save</string>
+    <string name="no_appointments">No appointments scheduled yet.</string>
+    <string name="appointment_saved">Appointment saved!</string>
+    <string name="please_select_date_time">Please select date and time first.</string>
+    <string name="delete">Delete</string>
+    <string name="appointment_deleted">Appointment deleted.</string>
+
+    <!-- Doctor Contact (Multi) -->
+    <string name="your_doctors">Your Doctors</string>
+    <string name="add_doctor">➕ Add Doctor</string>
+    <string name="no_doctors_saved">No doctor contacts saved yet.</string>
+    <string name="doctor_saved">Doctor contact saved!</string>
+    <string name="doctor_deleted">Doctor contact removed.</string>
+    <string name="doctor_name_hint">Doctor Name</string>
+    <string name="doctor_phone_hint">Phone Number</string>
+
+    <!-- Chat Quick Topics -->
+    <string name="quick_topics">Quick Topics</string>
+    <string name="privacy_notice">🔒 Your conversations stay on this device. No data is shared.</string>
+
+    <!-- Reminder Enhancement -->
+    <string name="custom_reminders">Custom Reminders</string>
+    <string name="add_reminder">➕ Add Reminder</string>
+    <string name="no_custom_reminders">No custom reminders yet.\nTap the button above to add one.</string>
+    <string name="reminder_title_hint">Reminder Title</string>
+    <string name="reminder_saved">Reminder saved and alarm set!</string>
+    <string name="reminder_deleted">Reminder deleted.</string>
+    <string name="alert_type">Alert Type</string>
+    <string name="alarm_sound">🔔 Alarm + Sound</string>
+    <string name="silent_notification">🔕 Notification Only</string>
+    <string name="quick_reminders">Quick Reminders</string>
+    <string name="tap_time_to_change">Tap time to change</string>
 </resources>
+

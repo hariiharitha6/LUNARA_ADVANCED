@@ -129,6 +129,10 @@ public class RiskAlertActivity extends BaseDrawerActivity {
     }
 
     private void showNotification(String title, String message) {
+        boolean notificationsEnabled = getSharedPreferences("app_settings", MODE_PRIVATE)
+                .getBoolean("notifications_enabled", true);
+        if (!notificationsEnabled) return;
+
         NotificationManager manager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         String channelId = "risk_channel";
